@@ -26,13 +26,11 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 }
 
-tasks.withType<Test> {
-    useJUnitPlatform()
-}
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 }
+
