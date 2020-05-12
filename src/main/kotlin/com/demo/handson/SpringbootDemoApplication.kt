@@ -7,5 +7,7 @@ import org.springframework.boot.runApplication
 class SpringbootDemoApplication
 
 fun main(args: Array<String>) {
-    runApplication<SpringbootDemoApplication>(*args)
+    val context = runApplication<SpringbootDemoApplication>(*args)
+    val bookService = context.getBean(BookService::class.java)
+    bookService.mockBooks()
 }
