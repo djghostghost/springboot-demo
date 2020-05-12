@@ -1,4 +1,3 @@
-
 variable "team" {
   default = "Growth-Backend"
   description = "The team name"
@@ -32,9 +31,14 @@ variable "mysql-password" {
 
 variable "private-subnets" {
   description = "private subnets"
-  default = ["subnet-7af7850c","subnet-d969d181"]
+  default = [
+    "subnet-7af7850c",
+    "subnet-d969d181"]
 }
 
-variable "jar-download-url" {
-  default = ""
+variable "public-subnets" {
+  description = "public subnets"
+  default = [
+    "subnet-7df7850b",
+    "subnet-da69d182"]
 }

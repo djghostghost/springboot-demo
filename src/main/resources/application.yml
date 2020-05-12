@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/book_store
-    username: book
-    password: book_store
+    url: jdbc:mysql://${MYSQL_ENDPOINT}
+    username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
   jpa:
     database: mysql
     hibernate:
