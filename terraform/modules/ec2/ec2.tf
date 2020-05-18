@@ -12,7 +12,7 @@ resource "aws_key_pair" "ssh-login" {
 resource "aws_instance" "terraform-ec2" {
 
   count = var.instance_count
-  security_groups = var.sg_ids
+  vpc_security_group_ids = var.sg_ids
 
   ami = data.aws_ssm_parameter.amzn2_ami.value
   instance_type = "t2.micro"

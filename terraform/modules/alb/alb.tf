@@ -12,14 +12,19 @@ resource "aws_lb" "terraform_handson_alb" {
 }
 
 resource "aws_alb_target_group" "alb" {
-  name = "alb-target-group"
-  port = 8080
+  name = "alb-target-group1"
+  port = 80
   protocol = "HTTP"
   vpc_id = var.vpc_id
 
+  lifecycle {
+    create_before_destroy = true
+  }
+
+
   health_check {
     interval = 30
-    path = "/health"
+    path = "/actuator/health"
     port = "8080"
     protocol = "HTTP"
     timeout = 5
