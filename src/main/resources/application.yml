@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${MYSQL_ENDPOINT}
-    username: ${MYSQL_USERNAME}
-    password: ${MYSQL_PASSWORD}
+    url: jdbc:mysql://tf-mysql-instance-garrus.cxxqejepe5mj.ap-northeast-1.rds.amazonaws.com:3306/book_store
+    username: book
+    password: book_store
   jpa:
     database: mysql
     hibernate:

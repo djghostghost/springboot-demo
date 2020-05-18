@@ -5,6 +5,8 @@ resource "aws_lb" "terraform_handson_alb" {
 
   subnets = var.subnets
   enable_deletion_protection = false
+  security_groups = [
+    var.http_sg]
 
   tags = var.tags
 }

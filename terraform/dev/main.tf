@@ -26,8 +26,9 @@ module "ec2" {
   rds_password = module.mysql.mysql_username
   rds_username = module.mysql.mysql_password
   sg_ids = [
-    module.sg.mysql_sg_id]
-  subnets = var.private_subnets
+    module.sg.ec2_service_sg_id,
+    module.sg.ec_ssh_sg_id]
+  subnets = var.public_subnets
   suffix = var.suffix
   tags = var.resource_tags
 }
@@ -39,4 +40,5 @@ module "alb" {
   suffix = var.suffix
   tags = var.resource_tags
   vpc_id = var.vpc_id
+  http_sg = module.sg.alb_http_sg_id
 }
